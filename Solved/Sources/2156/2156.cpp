@@ -18,12 +18,12 @@ int main() {
 	}
 
 	for (int i = 2; i <= n; i++) {
-		dp[0][i] = max(dp[0][i - 1], max(dp[1][i - 1], dp[2][i - 1]));
+		dp[0][i] = max({ dp[0][i - 1], dp[1][i - 1], dp[2][i - 1] });
 		dp[1][i] += dp[0][i - 1];
 		dp[2][i] += dp[1][i - 1];
 	}
 
-	cout << max(dp[0][n], max(dp[1][n], dp[2][n])) << endl;
+	cout << max({ dp[0][n], dp[1][n], dp[2][n] }) << endl;
 
 	return 0;
 }
