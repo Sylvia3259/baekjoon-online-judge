@@ -19,11 +19,11 @@ int main() {
 	}
 
 	for (int i = 2; i <= n; i++) {
-		int max = 0;
+		int tmp = 0;
 		for (int j = 1; j < i; j++)
-			if (a[i] > a[j] && max < dp[j])
-				max = dp[j];
-		dp[i] += max;
+			if (a[i] > a[j])
+				tmp = max(dp[j], tmp);
+		dp[i] += tmp;
 	}
 
 	cout << *max_element(&dp[1], &dp[n + 1]) << endl;
