@@ -15,8 +15,10 @@ int main() {
 	for (int i = 0; i < t; i++) {
 		int n;
 		cin >> n;
+
 		for (int j = 4; j <= n; j++)
 			dp[j] = dp[j - 3] + dp[j - 2] + dp[j - 1];
+
 		cout << dp[n] << endl;
 	}
 

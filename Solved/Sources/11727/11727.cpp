@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 
-int dp[1000] = { 0, 1, 3 };
+int dp[1001] = { 0, 1, 3 };
 
 int main() {
 	ios_base::sync_with_stdio(false);
@@ -11,8 +11,10 @@ int main() {
 
 	int n;
 	cin >> n;
+
 	for (int i = 3; i <= n; i++)
 		dp[i] = (dp[i - 2] * 2 + dp[i - 1]) % 10007;
+
 	cout << dp[n] << endl;
 
 	return 0;
