@@ -1,9 +1,9 @@
-# 2×n 타일링 2
+# 2×n 타일링 2 [🔗](https://www.acmicpc.net/problem/11727)
 
 ## 문제
-<p>2×n 직사각형을 1×2, 2×1과 2×2 타일로 채우는 방법의 수를 구하는 프로그램을 작성하시오.</p>  
-<p>아래 그림은 2×17 직사각형을 채운 한가지 예이다.</p>  
-<p style="text-align: center;"><img alt="" src="/upload/images/t2n2122.gif" style="height:59px; width:380px"/></p>
+<p>2×n 직사각형을 1×2, 2×1과 2×2 타일로 채우는 방법의 수를 구하는 프로그램을 작성하시오.</p>
+<p>아래 그림은 2×17 직사각형을 채운 한가지 예이다.</p>
+<p style="text-align: center;"><img alt="" src="https://www.acmicpc.net/upload/images/t2n2122.gif" style="height:59px; width:380px"/></p>
 
 ## 입력
 <p>첫째 줄에 n이 주어진다. (1 ≤ n ≤ 1,000)</p>
