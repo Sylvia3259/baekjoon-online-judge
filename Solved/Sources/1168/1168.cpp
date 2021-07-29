@@ -21,9 +21,10 @@ int init(int node, int start, int end) {
 
 int query(int node, int start, int end, int index) {
 	if (start == end) {
-		segment_tree[node] = 0;
-		while (node /= 2)
+		while (node) {
 			segment_tree[node]--;
+			node /= 2;
+		}
 
 		return start;
 	}
@@ -63,7 +64,6 @@ int main() {
 			break;
 	}
 	cout << '>';
-
 
 	return 0;
 }
