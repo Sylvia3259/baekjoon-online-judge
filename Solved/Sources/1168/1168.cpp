@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <queue>
 using namespace std;
 
 int segment_tree[1 << 18];
