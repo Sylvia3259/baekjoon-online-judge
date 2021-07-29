@@ -14,12 +14,11 @@ int main() {
 		string ps;
 		cin >> ps;
 
-		int length = ps.length();
 		int stack = 0;
-		for (int j = 0; j < length; j++) {
-			if (ps[j] == '(')
+		for (char c : ps) {
+			if (c == '(')
 				stack++;
-			else if (ps[j] == ')')
+			else if (c == ')')
 				if (!stack--)
 					break;
 		}
