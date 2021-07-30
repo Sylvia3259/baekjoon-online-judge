@@ -1,5 +1,6 @@
 #include <iostream>
 #include <algorithm>
+#include <cmath>
 using namespace std;
 
 void convert(int n) {
@@ -8,9 +9,8 @@ void convert(int n) {
 		return;
 	}
 
-	n = -n + ((n < 0) & (n & 1)) * 2;
-	convert(n / 2);
-	cout << abs(n % 2);
+	convert((int)ceil(n / -2.));
+	cout << abs(n % -2);
 }
 
 int main() {
