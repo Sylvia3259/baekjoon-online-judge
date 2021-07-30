@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <numeric>
 using namespace std;
 
 char digit[] = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";

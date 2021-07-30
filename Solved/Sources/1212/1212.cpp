@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <numeric>
 using namespace std;
 
 const char* oct_to_bin[] = { "000", "001", "010", "011", "100", "101", "110", "111" };
