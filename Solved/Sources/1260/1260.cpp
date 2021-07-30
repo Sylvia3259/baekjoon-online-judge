@@ -4,14 +4,14 @@
 using namespace std;
 
 bool adj[1001][1001];
-bool visited[2][1001];
+bool checked[2][1001];
 
 void dfs(int n, int v) {
-	visited[0][v] = true;
+	checked[0][v] = true;
 	cout << v << ' ';
 
 	for (int i = 1; i <= n; i++)
-		if (adj[v][i] && !visited[0][i])
+		if (adj[v][i] && !checked[0][i])
 			dfs(n, i);
 }
 
@@ -19,7 +19,7 @@ void bfs(int n, int v) {
 	queue<int> q;
 
 	q.push(v);
-	visited[1][v] = true;
+	checked[1][v] = true;
 
 	while (!q.empty()) {
 		v = q.front();
@@ -28,9 +28,9 @@ void bfs(int n, int v) {
 		cout << v << ' ';
 
 		for (int i = 1; i <= n; i++)
-			if (adj[v][i] && !visited[1][i]) {
+			if (adj[v][i] && !checked[1][i]) {
 				q.push(i);
-				visited[1][i] = true;
+				checked[1][i] = true;
 			}
 	}
 }
