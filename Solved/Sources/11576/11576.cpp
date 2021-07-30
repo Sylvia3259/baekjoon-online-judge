@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <cmath>
 using namespace std;
 
 void convert(int n, int b) {
@@ -22,12 +21,10 @@ int main() {
 	cin >> m;
 
 	int dec = 0;
-	int power = pow(a, m - 1);
 	for (int i = 0; i < m; i++) {
 		int digit;
 		cin >> digit;
-		dec += digit * power;
-		power /= a;
+		dec = dec * a + digit;
 	}
 
 	convert(dec, b);
