@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <queue>
 using namespace std;
 
 bool adj[1001][1001];
