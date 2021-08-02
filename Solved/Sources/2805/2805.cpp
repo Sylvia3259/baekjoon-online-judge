@@ -13,11 +13,14 @@ int main() {
 	int n, m;
 	cin >> n >> m;
 
-	for (int i = 0; i < n; i++)
+	int low = 0;
+	int high = 0;
+
+	for (int i = 0; i < n; i++) {
 		cin >> tree[i];
 
-	int low = 0;
-	int high = INT_MAX;
+		high = max(tree[i], high);
+	}
 
 	while (low <= high) {
 		int height = (low + high) / 2;

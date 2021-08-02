@@ -19,7 +19,7 @@ int main() {
 	sort(x, x + n);
 
 	int left = 1;
-	int right = INT_MAX - 1;
+	int right = x[n - 1];
 
 	while (left <= right) {
 		int distance = (left + right) / 2;

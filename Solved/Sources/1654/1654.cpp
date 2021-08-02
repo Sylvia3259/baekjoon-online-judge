@@ -13,11 +13,14 @@ int main() {
 	int k, n;
 	cin >> k >> n;
 
-	for (int i = 0; i < k; i++)
+	long long left = 1;
+	long long right = -1;
+
+	for (int i = 0; i < k; i++) {
 		cin >> lan[i];
 
-	long long left = 1;
-	long long right = LLONG_MAX - 1;
+		right = max(lan[i], right);
+	}
 
 	while (left <= right) {
 		long long length = (left + right) / 2;
