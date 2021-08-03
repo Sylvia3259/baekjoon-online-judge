@@ -10,8 +10,6 @@
 using namespace std;
 
 constexpr int vector_size = 11;
-enum Type { EMPTY, UNRIPE, RIPE };
-
 int box[1000000];
 
 #ifdef __GNUC__
@@ -76,17 +74,14 @@ bool is_vaild(const vector<int>& coord, int index, const vector<int>& size) {
 int bfs(const vector<int>& size, int length) {
 	queue<int> q;
 
-	int type_count[3] = {};
-
-	for (int i = 0; i < length; i++) {
-		type_count[box[i] + 1]++;
-		if (box[i] == 1)
+	int unripe = 0;
+	for (int i = 0; i < length; i++)
+		if (box[i] == 0)
+			unripe++;
+		else if (box[i] == 1)
 			q.push(i);
-	}
 
-	if (type_count[EMPTY] + type_count[UNRIPE] == length)
-		return -1;
-	if (type_count[EMPTY] + type_count[RIPE] == length)
+	if (!unripe)
 		return 0;
 
 	int day = 0;
@@ -102,16 +97,14 @@ int bfs(const vector<int>& size, int length) {
 				const int next_index = to_index(next_coord, size);
 				if (is_vaild(next_coord, next_index, size)) {
 					q.push(next_index);
-
 					box[next_index] = 1;
-					type_count[UNRIPE]--;
-					type_count[RIPE]++;
+					unripe--;
 				}
 			}
 		}
 	}
 
-	if (type_count[UNRIPE])
+	if (unripe)
 		return -1;
 
 	return day - 1;
