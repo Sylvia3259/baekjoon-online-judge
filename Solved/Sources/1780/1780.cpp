@@ -5,7 +5,7 @@ using namespace std;
 
 int paper[2187][2187];
 
-inline bool is_single_chunk(int x1, int y1, int x2, int y2) {
+inline bool is_a_single_paper(int x1, int y1, int x2, int y2) {
 	const int value = paper[y1][x1];
 
 	for (int i = y1; i < y2; i++)
@@ -20,18 +20,17 @@ valarray<int> cut_paper(int x1, int y1, int x2, int y2) {
 	valarray<int> result(3);
 	const int side = (x2 - x1) / 3;
 
-	if (is_single_chunk(x1, y1, x2, y2)) {
+	if (is_a_single_paper(x1, y1, x2, y2)) {
 		result[paper[y1][x1] + 1] = 1;
 		return result;
 	}
 
 	for (int i = 0; i < 3; i++)
-		for (int j = 0; j < 3; j++) {
+		for (int j = 0; j < 3; j++)
 			result += cut_paper(
 				x1 + side * j, y1 + side * i,
 				x1 + side * (j + 1), y1 + side * (i + 1)
 			);
-		}
 
 	return result;
 }
