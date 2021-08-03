@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <climits>
 using namespace std;
 
 int arr[500000];

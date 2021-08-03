@@ -1,6 +1,5 @@
 #include <iostream>
 #include <algorithm>
-#include <climits>
 using namespace std;
 
 long long lan[10000];
