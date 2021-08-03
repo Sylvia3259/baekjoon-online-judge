@@ -7,7 +7,7 @@ int box[1000][1000];
 
 int bfs(int m, int n) {
 	const pair<int, int> deltas[4] = { {-1, 0}, {0, -1}, {1, 0}, {0, 1} };
-	const auto vaild = [&](int x, int y) {
+	const auto is_vaild = [&](int x, int y) {
 		return (0 <= x && x < m) && (0 <= y && y < n) && box[y][x] == 0;
 	};
 
@@ -27,7 +27,7 @@ int bfs(int m, int n) {
 			int next_x = x + delta.first;
 			int next_y = y + delta.second;
 
-			if (vaild(next_x, next_y)) {
+			if (is_vaild(next_x, next_y)) {
 				q.push({ next_x, next_y });
 				box[next_y][next_x] = box[y][x] + 1;
 			}
@@ -38,11 +38,11 @@ int bfs(int m, int n) {
 	for (int y = 0; y < n; y++)
 		for (int x = 0; x < m; x++)
 			if (!box[y][x])
-				return 0;
+				return -1;
 			else
 				day = max(box[y][x], day);
 
-	return day;
+	return day - 1;
 }
 
 int main() {
@@ -57,7 +57,7 @@ int main() {
 		for (int x = 0; x < m; x++)
 			cin >> box[y][x];
 
-	cout << bfs(m, n) - 1 << endl;
+	cout << bfs(m, n) << endl;
 
 	return 0;
 }
